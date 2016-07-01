@@ -35,6 +35,8 @@ fs.readFile('keys.json', function(err, data){
 
   console.log(publicKeys);
 
+  // the P2SH address as described:
+  // https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki
   var address = new Address(publicKeys, requiredSignatures); // 2 of 3
 
   var utxo = {
