@@ -1,3 +1,9 @@
+//
+// unlock a P2SH transaction
+// please check http://tbtc.blockr.io/tx/info/d496ad5da0cded93c2b3a90ae6a8e3ef9e0bbe080bb768ce3d1b31fbc05ef831
+// and
+// bitcoin-cli -testnet gettransaction d496ad5da0cded93c2b3a90ae6a8e3ef9e0bbe080bb768ce3d1b31fbc05ef831
+
 var PublicKey = require('bitcore').PublicKey;
 var PrivateKey = require('bitcore').PrivateKey;
 var Address = require('bitcore').Address;
