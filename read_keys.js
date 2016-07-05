@@ -1,8 +1,11 @@
-var PublicKey = require('bitcore').PublicKey;
-var Address = require('bitcore').Address;
-var Networks = require('bitcore').Networks;
-var PrivateKey = require('bitcore').PrivateKey;
+bitcore = require('bitcore');
+
+var PublicKey  = bitcore.PublicKey;
+var PrivateKey = bitcore.PrivateKey;
+var Address = bitcore.Address;
+var Networks = bitcore.Networks;
 var fs = require('fs');
+
 
 fs.readFile('keys.json', function(err, data){
   if(err) {

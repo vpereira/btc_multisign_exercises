@@ -1,9 +1,13 @@
 // generate private keys and save it in the WIF format
-var PublicKey = require('bitcore').PublicKey;
-var Address = require('bitcore').Address;
-var Networks = require('bitcore').Networks;
-var PrivateKey = require('bitcore').PrivateKey;
+bitcore = require('bitcore');
+
+var PublicKey  = bitcore.PublicKey;
+var PrivateKey = bitcore.PrivateKey;
+var Address = bitcore.Address;
+var Networks = bitcore.Networks;
 var fs = require('fs');
+
+Networks.defaultNetwork = Networks.testnet;
 
 var numOfKeys = 3;
 
@@ -21,7 +25,7 @@ function SaveFile(privateKeys) {
 var privateKeys = [];
 
 for(i = 0; i < numOfKeys; i++) {
-  privateKeys.push(new PrivateKey(Networks.testnet).toWIF());
+  privateKeys.push(new PrivateKey().toWIF());
 }
 
 SaveFile(privateKeys);

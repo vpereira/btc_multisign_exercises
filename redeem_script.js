@@ -3,9 +3,11 @@
 
 // it will extract the public keys from your keys.json private keys
 // please set the requiredSignatures variable as necessary
+bitcore = require('bitcore');
 
-var PrivateKey = require('bitcore').PrivateKey;
-var Script = require('bitcore').Script;
+var PrivateKey = bitcore.PrivateKey;
+var Networks = bitcore.Networks;
+var Script = bitcore.Script;
 var fs = require('fs');
 
 var publicKeys = [];

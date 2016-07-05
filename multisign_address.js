@@ -1,9 +1,14 @@
-var PublicKey  = require('bitcore').PublicKey;
-var PrivateKey = require('bitcore').PrivateKey;
-var Address = require('bitcore').Address;
-var Networks = require('bitcore').Networks;
-var Transaction = require('bitcore').Transaction;
+bitcore = require('bitcore');
+
+var PublicKey  = bitcore.PublicKey;
+var PrivateKey = bitcore.PrivateKey;
+var Address = bitcore.Address;
+var Networks = bitcore.Networks;
+var Transaction = bitcore.Transaction;
 var fs = require('fs');
+
+Networks.defaultNetwork = Networks.testnet;
+
 
 fs.readFile('keys.json', function(err, data){
   var publicKeys = [];
@@ -17,7 +22,7 @@ fs.readFile('keys.json', function(err, data){
     publicKeys.push(privKey.toPublicKey().toString());
   }
   var requiredSignatures = 2;
-  var address = new Address(publicKeys, requiredSignatures,Networks.testnet);
+  var address = new Address(publicKeys, requiredSignatures);
 
   console.log(address.toString());
 

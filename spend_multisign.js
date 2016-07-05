@@ -4,14 +4,17 @@
 // and
 // bitcoin-cli -testnet gettransaction d496ad5da0cded93c2b3a90ae6a8e3ef9e0bbe080bb768ce3d1b31fbc05ef831
 
-var PublicKey = require('bitcore').PublicKey;
-var PrivateKey = require('bitcore').PrivateKey;
-var Address = require('bitcore').Address;
-var Networks = require('bitcore').Networks;
-var Transaction = require('bitcore').Transaction;
-var Script = require('bitcore').Script;
+bitcore = require('bitcore');
+
+var PublicKey  = bitcore.PublicKey;
+var PrivateKey = bitcore.PrivateKey;
+var Address = bitcore.Address;
+var Networks = bitcore.Networks;
+var Transaction = bitcore.Transaction;
+var Script = bitcore.Script;
 var fs = require('fs');
 
+Networks.defaultNetwork = Networks.testnet;
 
 fs.readFile('keys.json', function(err, data){
   var privateKeys = [];
