@@ -24,7 +24,7 @@ function SaveFile(privateKeys) {
 
 var privateKeys = [];
 
-for(i = 0; i < numOfKeys; i++) {
+for(let i = 0; i < numOfKeys; i++) {
   privateKeys.push(new PrivateKey().toWIF());
 }
 

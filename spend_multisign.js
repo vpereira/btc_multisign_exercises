@@ -30,7 +30,7 @@ fs.readFile('keys.json', function(err, data){
   }
 
   var jsonArray = JSON.parse(data);
-  for(i = 0; i < jsonArray.length; i++) {
+  for(let i = 0; i < jsonArray.length; i++) {
     var privKey = PrivateKey.fromWIF(jsonArray[i]);
     privateKeys.push(privKey);
     publicKeys.push(privKey.toPublicKey());
