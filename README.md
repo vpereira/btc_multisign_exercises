@@ -5,6 +5,6 @@ requirements:
 node-js, bitcore, bitcoin core, python and pycoin
 
 
-if you want to add the new generator keys to your bitcoin core wallet:
+if you want to add the new generated keys to your bitcoin core wallet:
 
 ````bitcoin-cli -testnet importprivkey <your WIF encoded private key> <label>````
